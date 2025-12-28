@@ -1,10 +1,9 @@
-toolsets = gnu vs2022 vs2019 vs2017 vs2015;
+toolsets = gnu vs2022 vs2019 vs2017;
 
 gnu.makefile = ../gnumake/GNUmakefile;
 vs2022.solutionfile = ../vc17/IshikoCollections.sln;
 vs2019.solutionfile = ../vc16/IshikoCollections.sln;
 vs2017.solutionfile = ../vc15/IshikoCollections.sln;
-vs2015.solutionfile = ../vc14/IshikoCollections.sln;
 
 library IshikoCollections
 {
@@ -20,6 +19,7 @@ library IshikoCollections
 
     if ($(toolset) != gnu)
     {
+        cxx-compiler-options = "/utf-8";
         outputdir = ../../lib/$(arch);
     }
 
